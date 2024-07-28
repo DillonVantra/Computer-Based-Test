@@ -1,16 +1,16 @@
 import React, { useState } from "react"
 
 interface LoginFormProps {
-  onSubmit: (data: { nis: string; password: string }) => void
+  onSubmit: (data: { nis: string; sandi: string }) => void
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
   const [nis, setNis] = useState("")
-  const [password, setPassword] = useState("")
+  const [sandi, setSandi] = useState("")
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    onSubmit({ nis, password })
+    onSubmit({ nis, sandi })
   }
 
   return (
@@ -38,17 +38,17 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
       <div className="mb-6">
         <label
           className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="password"
+          htmlFor="sandi"
         >
-          Password
+          Sandi
         </label>
         <input
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="password"
+          id="sandi"
           type="password"
-          placeholder="Masukkan password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Masukkan sandi"
+          value={sandi}
+          onChange={(e) => setSandi(e.target.value)}
           required
         />
       </div>
@@ -57,7 +57,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
         >
-          Login
+          Masuk
         </button>
       </div>
     </form>

@@ -1,6 +1,6 @@
 import React from "react"
 import "./index.css"
-import Landpage from "./components/Landpage"
+import Landpage from "./pages/Landpage"
 
 const App: React.FC = () => {
   return (
